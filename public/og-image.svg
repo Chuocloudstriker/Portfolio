@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1b1410"/>
+  <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200M120 0v630M240 0v630M360 0v630M480 0v630M600 0v630M720 0v630M840 0v630M960 0v630M1080 0v630" stroke="#f3e7d3" stroke-opacity=".05"/>
+  <rect x="120" y="120" width="960" height="390" rx="18" fill="#241b16" stroke="#f3e7d3" stroke-opacity=".16"/>
+  <text x="170" y="250" fill="#d8a657" font-family="monospace" font-size="34">portfolio.config.ts</text>
+  <text x="170" y="340" fill="#f3e7d3" font-family="Arial, sans-serif" font-size="58" font-weight="700">Full Stack + Diseño</text>
+  <text x="170" y="410" fill="#bfa98a" font-family="Arial, sans-serif" font-size="30">Ingeniería, interfaz e identidad digital</text>
+</svg>
