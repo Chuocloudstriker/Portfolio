@@ -1,5 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Portfolio favicon">
-  <rect width="64" height="64" rx="12" fill="#1b1410"/>
-  <path d="M16 22h32M16 32h20M16 42h28" stroke="#d8a657" stroke-width="4" stroke-linecap="round"/>
-  <path d="M45 30l5 5-5 5" fill="none" stroke="#8fae7e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64">
+  <!-- Generator: Adobe Illustrator 30.5.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #f3e7d3;
+      }
+
+      .st1 {
+        fill: #1b1410;
+      }
+
+      .st2 {
+        fill: #241b16;
+      }
+
+      .st3 {
+        fill: #d8a657;
+      }
+    </style>
+  </defs>
+  <rect class="st1" width="64" height="64" rx="12" ry="12"/>
+  <rect class="st3" x="3.51" y="3.51" width="56.97" height="56.97" rx="9" ry="9"/>
+  <rect class="st2" x="7.18" y="7.18" width="49.65" height="49.65" rx="6" ry="6"/>
+  <path class="st0" d="M25.34,30.36h11.3v14.91c0,5.42-3.01,8.14-8.29,8.14-2.26,0-4.52-.68-6.03-2.03l3.01-4.07c.75.68,1.51,1.36,3.01,1.36s2.26-.68,2.26-3.39v-10.17h-5.27v-4.75Z"/>
+  <path class="st3" d="M38.67,30.36h6.78c5.42,0,8.14,2.71,8.14,6.78,0,2.71-1.36,4.75-3.39,6.1l4.07,10.17h-6.1l-3.39-8.81h-.68v8.81h-5.42v-23.05ZM44.09,35.1v5.42h1.36c2.03,0,2.71-.68,2.71-2.71s-.68-2.71-2.71-2.71h-1.36Z"/>
 </svg>
