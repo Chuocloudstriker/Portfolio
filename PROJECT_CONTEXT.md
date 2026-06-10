@@ -51,6 +51,7 @@ Principles:
 - Tailwind CSS
 - Framer Motion
 - Lucide React
+- React Icons
 - Typed TypeScript data files
 - GitHub Pages
 - GitHub Actions
@@ -70,11 +71,13 @@ No backend in v1. Contact uses `mailto` for GitHub Pages compatibility.
 
 ## Site Map
 
-Initial one-page structure:
+Current one-page structure:
 
 - Hero
 - About
+- Technology marquee
 - Tech Stack
+- Education
 - Projects
 - Experience
 - Design / Creative Work
@@ -86,24 +89,20 @@ Potential future additions:
 
 - Blog / Notes
 - Individual project pages
-- Downloadable CV
 - Bilingual support
 - Theme switcher
 
 ## Content Inventory
 
-Current content is professional placeholder content. Pending real user input:
+The profile contains an initial real name and email, but several sections still use professional placeholder content. Pending real user input:
 
-- Professional identity
 - Technical skills
 - Design skills
 - Projects
 - Experience
 - Education
 - Social links
-- Contact details
-- Visual preferences
-- Repository and deploy details
+- Final copy review
 
 ## Data Model
 
@@ -112,8 +111,10 @@ Initial data groups:
 - Profile
 - Site metadata
 - Skills
+- Technologies
 - Projects
 - Experience
+- Education
 - Social links
 - Process steps
 
@@ -129,6 +130,19 @@ Implemented components:
 - TerminalCard
 - ProjectCard
 
+Implemented sections:
+
+- Hero
+- About
+- TechnologyMarquee
+- TechStack
+- Education
+- Projects
+- Experience
+- CreativeWork
+- Process
+- Contact
+
 ## Decisions Log
 
 - 2026-05-13: Repository inspected. Git repository exists but no project files were present.
@@ -137,19 +151,30 @@ Implemented components:
 - 2026-05-13: First one-page portfolio scaffold implemented with editable placeholder content.
 - 2026-05-13: HTML public asset paths updated to respect Vite `base` for GitHub Pages subpath deploys.
 - 2026-05-13: Session closed after verifying lint/build, validating GitHub Pages subpath behavior, and stopping the local Vite dev server.
+- 2026-06-09: Added a continuous sepia technology marquee between About and Tech Stack using React Icons.
+- 2026-06-09: Added C#, C++, Python, JavaScript, HTML5, CSS3, Tailwind CSS, Node.js, React, Vite, PostgreSQL, MySQL, SQLite, and Unity to the marquee.
+- 2026-06-09: Added a typed Education section for academic studies, courses, and certifications.
+- 2026-06-09: Updated alternating section backgrounds from Stack through Contact.
+- 2026-06-09: Configured the GitHub Pages workflow for repository subpath `/Portfolio/`.
+- 2026-06-09: Updated sitemap, canonical URL, and Open Graph URL for `https://chuocloudstriker.github.io/Portfolio/`.
+- 2026-06-10: Replaced the original favicon with a sepia `JR` monogram.
+- 2026-06-10: Completed a project-wide review covering generated files, duplication, accessibility, metadata, and performance.
+- 2026-06-10: Added `public/cv-jesus-rojas.pdf`; the Hero button is not linked yet.
 
 ## Current Stage
 
-Stage 4: First complete one-page implementation. Stage 5 and 6 basics are included through metadata, public assets, and GitHub Pages workflow.
+Content personalization and pre-publication QA. The visual structure and deployment configuration are implemented, but real portfolio content and final publication checks remain.
 
 ## Latest Session Status
 
-- Local development server was stopped before closing the session.
-- `npm run lint` passed.
-- `npm run build` passed.
-- `VITE_BASE_PATH=/Portfolio/ npm run build` passed.
-- `git status --short` still shows the scaffold files as untracked because no initial commit has been made yet.
-- No real portfolio content has been collected or applied yet; current data files still contain professional placeholders.
+- `npm run lint` passed on 2026-06-10.
+- `npm run build` passed on 2026-06-10.
+- `npm audit --omit=dev` reported zero known production vulnerabilities.
+- GitHub Pages production assets build correctly for `/Portfolio/`.
+- Local `main` contains commit `3347a99` (`Fix: Actualizacion de Favicon`) ahead of `origin/main`.
+- `public/cv-jesus-rojas.pdf` is present but untracked and not connected to the Hero button.
+- A Windows metadata file named `public/favicon.svg:Zone.Identifier` is untracked; a differently encoded tracked variant is currently marked deleted.
+- GitHub Pages returned `404` during the last external check and still needs activation or deployment verification.
 
 ## Completed Tasks
 
@@ -157,25 +182,38 @@ Stage 4: First complete one-page implementation. Stage 5 and 6 basics are includ
 - TypeScript, Vite, Tailwind, ESLint, and Prettier configuration added.
 - Typed data files created.
 - Main sections implemented.
+- Technology marquee implemented with sepia brand icons.
+- Education section and typed education data implemented.
+- Alternating principal and secondary section backgrounds implemented.
+- Custom `JR` favicon implemented.
 - Sepia terminal-inspired visual system implemented.
 - Basic SEO assets and GitHub Pages workflow added.
 - GitHub Pages subpath compatibility verified for favicon, Open Graph image, JS, and CSS asset paths.
+- Sitemap and canonical URL configured for the expected GitHub Pages URL.
+- CV PDF placed in `public/`.
 
 ## Pending Tasks
 
-- Collect professional and content information.
-- Confirm repository name for GitHub Pages base path.
-- Confirm final public URL and update sitemap.
-- Replace placeholder profile, project, experience, and contact details.
-- Add real CV asset if needed.
+- Link the Hero CV button to `public/cv-jesus-rojas.pdf`.
+- Replace generic GitHub, LinkedIn, repository, and demo links.
+- Replace placeholder projects, experience, education, and supporting copy.
+- Remove or ignore the `Zone.Identifier` metadata file without affecting the favicon.
+- Add a persistent pause control for the moving technology marquee.
+- Improve Open Graph metadata with an absolute PNG/JPG image and image details.
+- Decide whether to consolidate repeated Experience and Education card markup.
+- Decide whether to centralize section copy and SEO metadata.
+- Add basic automated accessibility or UI checks.
+- Activate GitHub Pages using GitHub Actions.
 - Validate published GitHub Pages deployment.
 
 ## Next Steps
 
-1. Replace placeholder content in `src/data`.
-2. Confirm repository name and set `VITE_BASE_PATH` if needed.
-3. Run local QA across mobile and desktop.
-4. Publish through GitHub Pages.
+1. Link and test the CV download.
+2. Replace placeholder content in `src/data`.
+3. Resolve the `Zone.Identifier` file state.
+4. Review and commit the current local changes.
+5. Push `main`, activate GitHub Pages with GitHub Actions, and validate the public URL.
+6. Run final QA across mobile and desktop.
 
 ## Notes for AI Assistants
 
@@ -183,5 +221,6 @@ Stage 4: First complete one-page implementation. Stage 5 and 6 basics are includ
 - Avoid generic SaaS/startup visual patterns.
 - Keep content separated from components.
 - Keep the project static-first for GitHub Pages.
+- Do not edit `dist/`; it is generated by Vite and ignored by Git.
 - Update this file after every meaningful project stage.
 - Do not introduce backend complexity unless explicitly required.
