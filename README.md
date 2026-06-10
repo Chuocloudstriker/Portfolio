@@ -33,12 +33,20 @@ El contenido editable vive en `src/data` y los tipos en `src/types/content.ts`.
 - `profile.ts`: identidad, bio, email y redes.
 - `projects.ts`: proyectos, stack, rol, links y highlights.
 - `experience.ts`: experiencia profesional.
+- `education.ts`: estudios académicos, cursos y certificaciones.
 - `skills.ts`: grupos de habilidades.
 - `site.ts`: navegación y pasos de proceso.
 
 ## Deploy en GitHub Pages
 
-El workflow está en `.github/workflows/deploy.yml`. Si el repositorio no publica en la raíz de un dominio de usuario, define `VITE_BASE_PATH` como `/<nombre-del-repo>/` en la configuración del workflow o en el entorno de build.
+El workflow está en `.github/workflows/deploy.yml` y publica automáticamente cada cambio enviado a `main`.
+
+- Repositorio: `Chuocloudstriker/Portfolio`
+- URL pública: `https://chuocloudstriker.github.io/Portfolio/`
+- Fuente de publicación requerida en GitHub: `GitHub Actions`
+- Base de Vite configurada para producción: `/Portfolio/`
+
+En GitHub, abre `Settings > Pages` y selecciona `GitHub Actions` en `Build and deployment > Source`.
 
 ## Pendiente de personalización
 

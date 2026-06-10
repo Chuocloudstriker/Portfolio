@@ -7,7 +7,7 @@ import { getExternalLinkProps } from '../lib/utils';
 
 export function Contact() {
   return (
-    <section id="contacto" className="py-20">
+    <section id="contacto" className="border-t border-line bg-soft/40 py-20">
       <Container className="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-end">
         <SectionHeader
           eyebrow="Contacto"

@@ -27,11 +27,16 @@ jobs:
           node-version: 24
           cache: npm
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE_PATH: /Portfolio/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

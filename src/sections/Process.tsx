@@ -4,7 +4,7 @@ import { processSteps } from '../data/site';
 
 export function Process() {
   return (
-    <section className="border-y border-line bg-soft/40 py-20">
+    <section className="py-20">
       <Container>
         <SectionHeader
           eyebrow="Proceso"

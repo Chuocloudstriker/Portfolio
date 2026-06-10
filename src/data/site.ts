@@ -7,6 +7,7 @@ export const site: SiteMeta = {
   navigation: [
     { label: 'Perfil', href: '#perfil' },
     { label: 'Stack', href: '#stack' },
+    { label: 'Educación', href: '#educacion' },
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Experiencia', href: '#experiencia' },
     { label: 'Contacto', href: '#contacto' },

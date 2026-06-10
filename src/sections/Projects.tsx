@@ -19,7 +19,7 @@ export function Projects() {
   );
 
   return (
-    <section id="proyectos" className="py-20">
+    <section id="proyectos" className="border-y border-line bg-soft/40 py-20">
       <Container>
         <SectionHeader
           eyebrow="Proyectos"

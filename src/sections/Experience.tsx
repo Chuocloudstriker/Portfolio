@@ -5,7 +5,7 @@ import { experience } from '../data/experience';
 
 export function Experience() {
   return (
-    <section id="experiencia" className="border-y border-line bg-soft/40 py-20">
+    <section id="experiencia" className="py-20">
       <Container>
         <SectionHeader
           eyebrow="Experiencia"

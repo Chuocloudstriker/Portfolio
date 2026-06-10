@@ -9,7 +9,7 @@ export const profile: Profile = {
   availability: 'Disponible para proyectos freelance, consultoría y roles técnicos.',
   email: 'jesusrojasworking@gmail.com',
   summary:
-    'Combino ingeniería, desarrollo full stack y diseño para crear productos digitales claros, funcionales y escalables.',
+    'Combino ingeniería de Software, desarrollo full stack y diseño para crear productos digitales claros, funcionales y escalables.',
   bio: [
     'Trabajo en la intersección entre software, interfaz y comunicación visual, construyendo soluciones que no solo funcionan, sino que también se entienden, se usan bien y se sostienen en el tiempo.',
     'Mi enfoque cruza arquitectura, experiencia de usuario, desarrollo frontend, backend y documentación técnica para transformar problemas ambiguos en productos digitales mantenibles.',

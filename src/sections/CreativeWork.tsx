@@ -10,7 +10,7 @@ const work = [
 
 export function CreativeWork() {
   return (
-    <section className="py-20">
+    <section className="border-y border-line bg-soft/40 py-20">
       <Container>
         <SectionHeader
           eyebrow="Diseño"

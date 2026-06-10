@@ -49,6 +49,15 @@ export type ExperienceItem = {
   stack: string[];
 };
 
+export type EducationItem = {
+  type: 'Formación académica' | 'Curso' | 'Certificación';
+  title: string;
+  institution: string;
+  period: string;
+  summary: string;
+  topics: string[];
+};
+
 export type ProcessStep = {
   title: string;
   description: string;
