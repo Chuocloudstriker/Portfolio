@@ -1,6 +1,6 @@
 # Next Session Handoff
 
-Fecha: 2026-06-10
+Fecha: 2026-06-11
 
 ## Estado actual
 
@@ -34,18 +34,16 @@ Cambios implementados desde la sesión inicial:
 - Configuración de GitHub Pages para `/Portfolio/`.
 - Sitemap, URL canónica y Open Graph URL actualizados.
 - Revisión técnica completa del proyecto.
-- PDF del CV agregado como `public/cv-jesus-rojas.pdf`, todavía sin enlazar.
+- PDF del CV enlazado desde el Hero mediante `import.meta.env.BASE_URL`.
+- Metadatos `Zone.Identifier` excluidos mediante `.gitignore`; la variante rastreada queda marcada para eliminación.
 
 Estado al cerrar la sesión:
 
 - El servidor local no quedó ejecutándose.
 - La rama local es `main`.
-- Último commit local: `3347a99 Fix: Actualizacion de Favicon`.
-- `origin/main` apunta a `976eff4 Primera Carga`; el commit local del favicon está pendiente de push.
-- `public/cv-jesus-rojas.pdf` está sin seguimiento.
-- Existe un archivo sin seguimiento `public/favicon.svg:Zone.Identifier`.
-- Una variante del mismo metadato con otro carácter de separador está marcada como eliminada.
-- No modificar ni restaurar esos archivos automáticamente sin revisar primero el estado de Git.
+- Último commit local y remoto: `e8de1aa Order and Background chances`.
+- Hay cambios locales sin commit en `.gitignore`, `src/sections/Hero.tsx` y la eliminación de la variante rastreada de `Zone.Identifier`.
+- El archivo físico `public/favicon.svg:Zone.Identifier` permanece en disco, pero está ignorado.
 - `dist/` contiene el build generado, está ignorado por Git y puede regenerarse.
 
 ## Archivos clave
@@ -68,23 +66,14 @@ Estado al cerrar la sesión:
 
 ## Qué quedó pendiente
 
-1. Vincular el botón `CV`:
-   - usar `${import.meta.env.BASE_URL}cv-jesus-rojas.pdf`
-   - comprobar la descarga local y con `/Portfolio/`
-
-2. Resolver archivos de metadatos de Windows:
-   - revisar los dos nombres `Zone.Identifier`
-   - conservar `public/favicon.svg`
-   - eliminar o ignorar solamente los metadatos innecesarios
-
-3. Reemplazar contenido placeholder:
+1. Reemplazar contenido placeholder:
    - GitHub y LinkedIn
    - proyectos, repositorios y demos
    - experiencia
    - educación, cursos y certificaciones
    - textos visibles que aún describen contenido provisional
 
-4. Revisar hallazgos técnicos:
+2. Revisar hallazgos técnicos:
    - botón permanente para pausar el cintillo
    - Open Graph PNG/JPG con URL absoluta
    - metadatos SEO duplicados
@@ -93,7 +82,7 @@ Estado al cerrar la sesión:
    - filtros de proyectos sin estado vacío
    - pruebas básicas de accesibilidad
 
-5. Publicar:
+3. Publicar:
    - revisar y confirmar los cambios locales
    - commit y push cuando el usuario lo solicite
    - seleccionar `GitHub Actions` en `Settings > Pages`
@@ -107,8 +96,8 @@ Pega esto mañana en Codex CLI:
 Retomemos el portafolio en /home/cloudstriker/Projects/Portfolio.
 Lee PROJECT_CONTEXT.md, README.md y NEXT_SESSION.md, y después revisa git status.
 No rehagas el scaffold ni modifiques dist/.
-Primero revisa el estado especial de los archivos Zone.Identifier y confirma los cambios pendientes.
-Luego conecta public/cv-jesus-rojas.pdf al botón CV del Hero usando import.meta.env.BASE_URL.
+Confirma los cambios pendientes del botón CV y de Zone.Identifier.
+Luego continúa con la personalización del contenido en src/data.
 ```
 
 ## Comandos útiles

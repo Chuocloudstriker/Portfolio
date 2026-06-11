@@ -160,6 +160,8 @@ Implemented sections:
 - 2026-06-10: Replaced the original favicon with a sepia `JR` monogram.
 - 2026-06-10: Completed a project-wide review covering generated files, duplication, accessibility, metadata, and performance.
 - 2026-06-10: Added `public/cv-jesus-rojas.pdf`; the Hero button is not linked yet.
+- 2026-06-11: Linked the Hero CV button using Vite's base URL and verified `/Portfolio/cv-jesus-rojas.pdf`.
+- 2026-06-11: Ignored Windows `Zone.Identifier` metadata and retained the real favicon.
 
 ## Current Stage
 
@@ -171,9 +173,10 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - `npm run build` passed on 2026-06-10.
 - `npm audit --omit=dev` reported zero known production vulnerabilities.
 - GitHub Pages production assets build correctly for `/Portfolio/`.
-- Local `main` contains commit `3347a99` (`Fix: Actualizacion de Favicon`) ahead of `origin/main`.
-- `public/cv-jesus-rojas.pdf` is present but untracked and not connected to the Hero button.
-- A Windows metadata file named `public/favicon.svg:Zone.Identifier` is untracked; a differently encoded tracked variant is currently marked deleted.
+- Local `main` and `origin/main` point to `e8de1aa` (`Order and Background chances`).
+- `public/cv-jesus-rojas.pdf` is tracked and connected to the Hero download button.
+- Windows `Zone.Identifier` metadata is ignored; the previously tracked encoded variant is marked deleted locally.
+- `npm run lint`, the default build, and the `/Portfolio/` production build passed on 2026-06-11.
 - GitHub Pages returned `404` during the last external check and still needs activation or deployment verification.
 
 ## Completed Tasks
@@ -191,13 +194,13 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - GitHub Pages subpath compatibility verified for favicon, Open Graph image, JS, and CSS asset paths.
 - Sitemap and canonical URL configured for the expected GitHub Pages URL.
 - CV PDF placed in `public/`.
+- Hero CV download linked and verified for local and GitHub Pages base paths.
+- Windows download metadata excluded without affecting `public/favicon.svg`.
 
 ## Pending Tasks
 
-- Link the Hero CV button to `public/cv-jesus-rojas.pdf`.
 - Replace generic GitHub, LinkedIn, repository, and demo links.
 - Replace placeholder projects, experience, education, and supporting copy.
-- Remove or ignore the `Zone.Identifier` metadata file without affecting the favicon.
 - Add a persistent pause control for the moving technology marquee.
 - Improve Open Graph metadata with an absolute PNG/JPG image and image details.
 - Decide whether to consolidate repeated Experience and Education card markup.
@@ -208,12 +211,11 @@ Content personalization and pre-publication QA. The visual structure and deploym
 
 ## Next Steps
 
-1. Link and test the CV download.
-2. Replace placeholder content in `src/data`.
-3. Resolve the `Zone.Identifier` file state.
-4. Review and commit the current local changes.
-5. Push `main`, activate GitHub Pages with GitHub Actions, and validate the public URL.
-6. Run final QA across mobile and desktop.
+1. Replace placeholder content in `src/data`.
+2. Review and commit the current local changes.
+3. Push `main`, activate GitHub Pages with GitHub Actions, and validate the public URL.
+4. Address the remaining technical review findings.
+5. Run final QA across mobile and desktop.
 
 ## Notes for AI Assistants
 

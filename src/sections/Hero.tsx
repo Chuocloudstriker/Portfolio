@@ -31,7 +31,12 @@ export function Hero() {
             <Button href="#proyectos" variant="secondary">
               Ver proyectos
             </Button>
-            <Button href="#" variant="ghost" aria-label="Descargar CV pendiente">
+            <Button
+              href={`${import.meta.env.BASE_URL}cv-jesus-rojas.pdf`}
+              variant="ghost"
+              download
+              aria-label="Descargar CV de Jesús Rojas en PDF"
+            >
               <Download size={16} aria-hidden="true" />
               CV
             </Button>
