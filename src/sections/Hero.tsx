@@ -1,4 +1,4 @@
-import { Code2, Download, Mail } from 'lucide-react';
+import { Code2, FileText, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
@@ -34,10 +34,11 @@ export function Hero() {
             <Button
               href={`${import.meta.env.BASE_URL}cv-jesus-rojas.pdf`}
               variant="ghost"
-              download
-              aria-label="Descargar CV de Jesús Rojas en PDF"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir CV de Jesús Rojas en PDF en una pestaña nueva"
             >
-              <Download size={16} aria-hidden="true" />
+              <FileText size={16} aria-hidden="true" />
               CV
             </Button>
           </div>
