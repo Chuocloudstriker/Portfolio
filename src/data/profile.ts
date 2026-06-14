@@ -3,6 +3,7 @@ import type { Profile } from '../types/content';
 export const profile: Profile = {
   name: 'Jesús José Rojas Gómez',
   role: 'Ingeniero en Informática, Full Stack Developer y Diseñador Gráfico',
+  headline: 'De la idea al despliegue: aplicaciones y sitios web completos.',
   secondaryRoles: ['Software Engineer', 'Networking', 'UX/UI Designer'],
   location: 'Chile',
   languages: ['Español', 'Inglés'],
@@ -15,8 +16,8 @@ export const profile: Profile = {
     'Mi formación cruza ingeniería en informática, diseño gráfico (Illustrator, Photoshop) y desarrollo 3D con Unity, lo que me permite abordar un proyecto desde la lógica del software hasta el detalle visual y la experiencia final.',
   ],
   socials: [
-    { label: 'GitHub', href: 'https://github.com/' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
+    { label: 'GitHub', href: 'https://github.com/Chuocloudstriker/' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jesus-j-rojas-g/' },
     { label: 'Email', href: 'mailto:jesusrojasworking@gmail.com' },
   ],
 };

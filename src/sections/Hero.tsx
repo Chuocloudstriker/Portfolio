@@ -1,4 +1,4 @@
-import { Code2, FileText, Mail } from 'lucide-react';
+import { BadgeCheck, Code2, FileText, Languages, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
@@ -20,9 +20,26 @@ export function Hero() {
             Ingeniería / Interfaz / Identidad
           </p>
           <h1 className="max-w-4xl text-4xl font-semibold tracking-normal text-primary sm:text-6xl">
-            {profile.summary}
+            {profile.headline}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{profile.role}</p>
+          <p className="mt-5 max-w-2xl font-mono text-sm uppercase tracking-wide text-secondary">
+            {profile.role}
+          </p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">{profile.summary}</p>
+          <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+            <li className="inline-flex items-center gap-2">
+              <MapPin size={15} aria-hidden="true" className="text-accent" />
+              {profile.location}
+            </li>
+            <li className="inline-flex items-center gap-2">
+              <Languages size={15} aria-hidden="true" className="text-accent" />
+              {profile.languages.join(' / ')}
+            </li>
+            <li className="inline-flex items-center gap-2">
+              <BadgeCheck size={15} aria-hidden="true" className="text-accent" />
+              Disponible para proyectos
+            </li>
+          </ul>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={`mailto:${profile.email}`}>
               <Mail size={16} aria-hidden="true" />
@@ -50,11 +67,12 @@ export function Hero() {
         >
           <TerminalCard
             lines={[
-              'const profile = {',
-              `  location: "${profile.location}",`,
-              '  focus: ["software", "design", "systems"],',
-              '  output: "productos digitales claros",',
-              '  deploy: "static-first / GitHub Pages"',
+              'const jesus = {',
+              `  base: "${profile.location}",`,
+              '  stack: ["PHP/MySQL", "React", "TypeScript"],',
+              '  design: ["UI/UX", "Illustrator", "Unity"],',
+              '  since: 2009,',
+              '  mode: "freelance / consultoría"',
               '};',
             ]}
           />

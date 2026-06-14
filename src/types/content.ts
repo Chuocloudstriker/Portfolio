@@ -6,6 +6,7 @@ export type SocialLink = {
 export type Profile = {
   name: string;
   role: string;
+  headline: string;
   secondaryRoles: string[];
   location: string;
   languages: string[];
