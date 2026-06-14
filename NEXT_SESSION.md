@@ -1,10 +1,10 @@
 # Next Session Handoff
 
-Fecha: 2026-06-11
+Fecha: 2026-06-14
 
 ## Estado actual
 
-El portafolio estático se encuentra en `/home/cloudstriker/Projects/Portfolio`. La estructura visual está avanzada, pero todavía contiene contenido de ejemplo y no se ha validado una publicación activa en GitHub Pages.
+El portafolio estático se encuentra en `C:\Users\chuom\Documents\GitHub\Portfolio`. La estructura visual y el deploy a GitHub Pages ya estaban implementados; en esta sesión se reemplazó el contenido placeholder de experiencia, educación, habilidades y perfil con la información real extraída de `public/cv-jesus-rojas.pdf`.
 
 Stack implementado:
 
@@ -17,63 +17,59 @@ Stack implementado:
 - React Icons
 - GitHub Pages workflow
 
-Validación realizada:
+## Cambios implementados en esta sesión
 
-- `npm run lint` pasó el 2026-06-10.
-- `npm run build` pasó el 2026-06-10.
-- El build para la subruta `/Portfolio/` genera rutas correctas.
-- `npm audit --omit=dev` informó cero vulnerabilidades conocidas de producción.
+- `src/data/experience.ts`: reemplazado con las 7 experiencias laborales reales del CV (Importadora Andesland, Freelance, Atento/Claro, CR Ajustes, Chiquito's Pastelería, IMPROVE, Wall Street English), cada una con un stack asociado.
+- `src/data/education.ts`: reemplazado con formación académica (U.N.E.G.), certificaciones (PHP/MySQL, C en Linux, Illustrator) y cursos (redes wireless, animación 3D, inglés business).
+- `src/data/skills.ts`: se agregaron HTML/CSS/JS y PHP/MySQL (del CV), Illustrator/Photoshop en Diseño, y un nuevo grupo "Game / 3D" (Unity, Modelaje 3D, Animación, Texturización).
+- `src/data/profile.ts`: `summary` y `bio` actualizados para reflejar el perfil real (freelance desde 2009, soporte técnico, PHP/MySQL, diseño gráfico, Unity).
+- `src/data/technologies.ts` y `src/sections/TechnologyMarquee.tsx`: se agregó PHP (`SiPhp`) al cintillo de tecnologías.
+- `CHANGELOG.md` y `PROJECT_CONTEXT.md` actualizados con estos cambios.
 
-Cambios implementados desde la sesión inicial:
+## Validación pendiente
 
-- Cintillo animado de tecnologías entre Perfil y Stack.
-- Logos sepia para C#, C++, Python, JavaScript, HTML5, CSS3, Tailwind CSS, Node.js, React, Vite, PostgreSQL, MySQL, SQLite y Unity.
-- Nueva sección Educación entre Stack y Proyectos.
-- Alternancia de fondos desde Stack hasta Contacto.
-- Favicon personalizado con monograma `JR`.
-- Configuración de GitHub Pages para `/Portfolio/`.
-- Sitemap, URL canónica y Open Graph URL actualizados.
-- Revisión técnica completa del proyecto.
-- PDF del CV enlazado desde el Hero mediante `import.meta.env.BASE_URL`.
-- Metadatos `Zone.Identifier` excluidos mediante `.gitignore`; la variante rastreada queda marcada para eliminación.
+**IMPORTANTE**: `node_modules` no está instalado en este entorno, por lo que NO se ejecutó `npm run lint`, `npm run build` ni `npm run dev` después de estos cambios. Se explicó al usuario cómo correr el servidor local (`npm install` y luego `npm run dev`, abrir `http://localhost:5173/`), pero el usuario aún no lo ha hecho.
 
-Estado al cerrar la sesión:
+Próxima sesión debe:
 
-- El servidor local no quedó ejecutándose.
+1. Correr `npm install && npm run dev` y revisar visualmente las secciones Experiencia, Educación, Stack y Perfil.
+2. Verificar con el usuario si el listado de experiencia (7 items) y educación (7 items) es demasiado largo para el diseño, y recortar si es necesario.
+3. Confirmar si `secondaryRoles` en `src/data/profile.ts` (`'Software Engineer', 'Networking', 'UX/UI Designer'`) sigue siendo adecuado.
+4. Correr `npm run lint` y `npm run build` para confirmar que no hay errores de tipos (especialmente el nuevo grupo "Game / 3D" en `skills.ts` y el ícono `php` en `technologies.ts`).
+
+## Estado al cerrar la sesión
+
 - La rama local es `main`.
-- Último commit local y remoto: `e8de1aa Order and Background chances`.
-- Hay cambios locales sin commit en `.gitignore`, `src/sections/Hero.tsx` y la eliminación de la variante rastreada de `Zone.Identifier`.
-- El archivo físico `public/favicon.svg:Zone.Identifier` permanece en disco, pero está ignorado.
-- `dist/` contiene el build generado, está ignorado por Git y puede regenerarse.
+- Último commit local y remoto: `f0ccc05 Fix: Open CV in another page.`
+- Hay cambios locales sin commit en: `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, `src/data/profile.ts`, `src/data/technologies.ts`, `src/sections/TechnologyMarquee.tsx`, `CHANGELOG.md`, `PROJECT_CONTEXT.md`, `NEXT_SESSION.md`.
+- No se hizo ningún commit ni push en esta sesión (no fue solicitado).
+- El servidor local no se ejecutó.
 
 ## Archivos clave
 
 - `PROJECT_CONTEXT.md`: contexto del proyecto, decisiones y roadmap.
 - `README.md`: instalación, desarrollo, build y deploy.
-- `src/data/profile.ts`: nombre, bio, email, redes, disponibilidad.
-- `src/data/projects.ts`: proyectos mostrados y filtros.
-- `src/data/experience.ts`: experiencia profesional.
-- `src/data/education.ts`: estudios, cursos y certificaciones.
-- `src/data/skills.ts`: grupos de habilidades.
-- `src/data/technologies.ts`: orden y nombres del cintillo tecnológico.
+- `src/data/profile.ts`: nombre, bio, email, redes, disponibilidad (actualizado con CV).
+- `src/data/projects.ts`: proyectos mostrados y filtros (aún placeholder, pendiente).
+- `src/data/experience.ts`: experiencia profesional (actualizado con CV).
+- `src/data/education.ts`: estudios, cursos y certificaciones (actualizado con CV).
+- `src/data/skills.ts`: grupos de habilidades (actualizado con CV).
+- `src/data/technologies.ts`: orden y nombres del cintillo tecnológico (PHP agregado).
 - `src/data/site.ts`: navegación y proceso.
-- `src/sections/TechnologyMarquee.tsx`: logos y renderizado del cintillo.
-- `src/sections/Education.tsx`: sección visual de educación.
-- `src/sections/Hero.tsx`: botón pendiente del CV.
-- `src/styles/index.css`: tokens visuales y base CSS.
-- `public/cv-jesus-rojas.pdf`: CV pendiente de enlazar.
-- `.github/workflows/deploy.yml`: deploy a GitHub Pages.
+- `src/sections/TechnologyMarquee.tsx`: logos y renderizado del cintillo (PHP agregado).
+- `public/cv-jesus-rojas.pdf`: fuente de la información usada para los datos personales.
 
 ## Qué quedó pendiente
 
-1. Reemplazar contenido placeholder:
-   - GitHub y LinkedIn
-   - proyectos, repositorios y demos
-   - experiencia
-   - educación, cursos y certificaciones
-   - textos visibles que aún describen contenido provisional
+1. Reemplazar contenido placeholder restante:
+   - GitHub y LinkedIn (`src/data/profile.ts`)
+   - proyectos, repositorios y demos (`src/data/projects.ts`)
 
-2. Revisar hallazgos técnicos:
+2. Revisar contenido nuevo del CV con el usuario:
+   - confirmar longitud de experiencia/educación
+   - confirmar roles secundarios y bio
+
+3. Revisar hallazgos técnicos previos (sin cambios esta sesión):
    - botón permanente para pausar el cintillo
    - Open Graph PNG/JPG con URL absoluta
    - metadatos SEO duplicados
@@ -82,7 +78,8 @@ Estado al cerrar la sesión:
    - filtros de proyectos sin estado vacío
    - pruebas básicas de accesibilidad
 
-3. Publicar:
+4. Publicar:
+   - correr `npm install`, `npm run lint`, `npm run build` antes de comitear
    - revisar y confirmar los cambios locales
    - commit y push cuando el usuario lo solicite
    - seleccionar `GitHub Actions` en `Settings > Pages`
@@ -90,20 +87,20 @@ Estado al cerrar la sesión:
 
 ## Prompt recomendado para retomar
 
-Pega esto mañana en Codex CLI:
-
 ```text
-Retomemos el portafolio en /home/cloudstriker/Projects/Portfolio.
+Retomemos el portafolio en C:\Users\chuom\Documents\GitHub\Portfolio.
 Lee PROJECT_CONTEXT.md, README.md y NEXT_SESSION.md, y después revisa git status.
-No rehagas el scaffold ni modifiques dist/.
-Confirma los cambios pendientes del botón CV y de Zone.Identifier.
-Luego continúa con la personalización del contenido en src/data.
+Hay cambios sin commit en src/data (experience, education, skills, profile, technologies)
+y en src/sections/TechnologyMarquee.tsx con info real del CV.
+Corre npm install && npm run dev para revisar visualmente esos cambios con el usuario
+antes de continuar.
 ```
 
 ## Comandos útiles
 
-```bash
-cd /home/cloudstriker/Projects/Portfolio
+```powershell
+cd "C:\Users\chuom\Documents\GitHub\Portfolio"
+npm install
 npm run lint
 npm run build
 npm run dev

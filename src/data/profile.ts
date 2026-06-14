@@ -9,10 +9,10 @@ export const profile: Profile = {
   availability: 'Disponible para proyectos freelance, consultoría y roles técnicos.',
   email: 'jesusrojasworking@gmail.com',
   summary:
-    'Combino ingeniería de Software, desarrollo full stack y diseño para crear productos digitales claros, funcionales y escalables.',
+    'Ingeniero en Informática y desarrollador web con amplia experiencia en diseño, desarrollo y soporte técnico de sitios y aplicaciones.',
   bio: [
-    'Trabajo en la intersección entre software, interfaz y comunicación visual, construyendo soluciones que no solo funcionan, sino que también se entienden, se usan bien y se sostienen en el tiempo.',
-    'Mi enfoque cruza arquitectura, experiencia de usuario, desarrollo frontend, backend y documentación técnica para transformar problemas ambiguos en productos digitales mantenibles.',
+    'Desde 2009 desarrollo y mantengo sitios web y soluciones a medida como freelancer, combinando frontend, backend con PHP/MySQL y soporte técnico de sistemas informáticos para distintas empresas.',
+    'Mi formación cruza ingeniería en informática, diseño gráfico (Illustrator, Photoshop) y desarrollo 3D con Unity, lo que me permite abordar un proyecto desde la lógica del software hasta el detalle visual y la experiencia final.',
   ],
   socials: [
     { label: 'GitHub', href: 'https://github.com/' },

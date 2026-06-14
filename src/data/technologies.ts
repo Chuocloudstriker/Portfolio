@@ -6,6 +6,7 @@ export type TechnologyIcon =
   | 'javascript'
   | 'mysql'
   | 'node'
+  | 'php'
   | 'postgresql'
   | 'python'
   | 'react'
@@ -28,6 +29,7 @@ export const technologies: Technology[] = [
   { name: 'CSS3', icon: 'css' },
   { name: 'Tailwind CSS', icon: 'tailwind' },
   { name: 'Node.js', icon: 'node' },
+  { name: 'PHP', icon: 'php' },
   { name: 'React', icon: 'react' },
   { name: 'Vite', icon: 'vite' },
   { name: 'PostgreSQL', icon: 'postgresql' },

@@ -94,15 +94,11 @@ Potential future additions:
 
 ## Content Inventory
 
-The profile contains an initial real name and email, but several sections still use professional placeholder content. Pending real user input:
+The profile contains the real name, email, bio, experience, education, and skills, sourced from `public/cv-jesus-rojas.pdf`. Pending real user input:
 
-- Technical skills
-- Design skills
-- Projects
-- Experience
-- Education
-- Social links
-- Final copy review
+- Projects (still placeholder)
+- Social links (GitHub and LinkedIn URLs are placeholders)
+- Final copy review of the new experience/education/skills content (verify with the user before publishing)
 
 ## Data Model
 
@@ -162,6 +158,8 @@ Implemented sections:
 - 2026-06-10: Added `public/cv-jesus-rojas.pdf`; the Hero button is not linked yet.
 - 2026-06-11: Linked the Hero CV button using Vite's base URL and verified `/Portfolio/cv-jesus-rojas.pdf`.
 - 2026-06-11: Ignored Windows `Zone.Identifier` metadata and retained the real favicon.
+- 2026-06-14: Read `public/cv-jesus-rojas.pdf` and filled `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` with the real work history, certifications, courses, and bio.
+- 2026-06-14: Added a "Game / 3D" skill group (Unity, 3D modeling, animation, texturing) and added PHP to `src/data/technologies.ts` and `src/sections/TechnologyMarquee.tsx`.
 
 ## Current Stage
 
@@ -173,11 +171,12 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - `npm run build` passed on 2026-06-10.
 - `npm audit --omit=dev` reported zero known production vulnerabilities.
 - GitHub Pages production assets build correctly for `/Portfolio/`.
-- Local `main` and `origin/main` point to `e8de1aa` (`Order and Background chances`).
+- Local `main` and `origin/main` point to `f0ccc05` (`Fix: Open CV in another page.`).
 - `public/cv-jesus-rojas.pdf` is tracked and connected to the Hero download button.
 - Windows `Zone.Identifier` metadata is ignored; the previously tracked encoded variant is marked deleted locally.
 - `npm run lint`, the default build, and the `/Portfolio/` production build passed on 2026-06-11.
 - GitHub Pages returned `404` during the last external check and still needs activation or deployment verification.
+- 2026-06-14: `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` were updated with real content from the CV. Changes are **uncommitted**. `node_modules` is not installed in this environment, so lint/build/dev were not run after the change — verify with `npm install && npm run dev` next session before committing.
 
 ## Completed Tasks
 
@@ -196,11 +195,15 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - CV PDF placed in `public/`.
 - Hero CV download linked and verified for local and GitHub Pages base paths.
 - Windows download metadata excluded without affecting `public/favicon.svg`.
+- Real experience, education, skills, and profile bio populated from `public/cv-jesus-rojas.pdf`.
 
 ## Pending Tasks
 
-- Replace generic GitHub, LinkedIn, repository, and demo links.
-- Replace placeholder projects, experience, education, and supporting copy.
+- Run `npm install && npm run dev` to review the new experience/education/skills/profile content visually in the browser.
+- Replace generic GitHub and LinkedIn social links in `src/data/profile.ts`.
+- Replace placeholder projects in `src/data/projects.ts`.
+- Decide whether to trim the experience list (7 entries) or the education list (7 entries) for layout/length.
+- Confirm `secondaryRoles` in `src/data/profile.ts` (currently "Software Engineer", "Networking", "UX/UI Designer") still match the new content.
 - Add a persistent pause control for the moving technology marquee.
 - Improve Open Graph metadata with an absolute PNG/JPG image and image details.
 - Decide whether to consolidate repeated Experience and Education card markup.
@@ -211,11 +214,12 @@ Content personalization and pre-publication QA. The visual structure and deploym
 
 ## Next Steps
 
-1. Replace placeholder content in `src/data`.
-2. Review and commit the current local changes.
-3. Push `main`, activate GitHub Pages with GitHub Actions, and validate the public URL.
-4. Address the remaining technical review findings.
-5. Run final QA across mobile and desktop.
+1. Run the local dev server and review the new CV-based content with the user (experience, education, skills, profile).
+2. Adjust/trim content based on user feedback, then commit.
+3. Replace placeholder projects and social links in `src/data`.
+4. Push `main`, activate GitHub Pages with GitHub Actions, and validate the public URL.
+5. Address the remaining technical review findings.
+6. Run final QA across mobile and desktop.
 
 ## Notes for AI Assistants
 

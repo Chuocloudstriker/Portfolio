@@ -3,15 +3,19 @@ import type { SkillGroup } from '../types/content';
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Frontend',
-    items: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Accesibilidad', 'Responsive UI'],
+    items: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Responsive UI'],
   },
   {
     title: 'Backend',
-    items: ['Node.js', 'APIs REST', 'Autenticación', 'Bases de datos', 'Integraciones'],
+    items: ['PHP', 'MySQL', 'Node.js', 'APIs REST', 'Bases de datos'],
   },
   {
     title: 'Diseño',
-    items: ['UX/UI', 'Branding', 'Sistemas visuales', 'Prototipado', 'Dirección visual'],
+    items: ['Adobe Illustrator', 'Adobe Photoshop', 'UX/UI', 'Branding', 'Sistemas visuales'],
+  },
+  {
+    title: 'Game / 3D',
+    items: ['Unity', 'Modelaje 3D', 'Animación', 'Texturización'],
   },
   {
     title: 'Entrega',
