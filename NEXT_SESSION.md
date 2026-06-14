@@ -28,11 +28,11 @@ Stack implementado:
 
 ## Validación pendiente
 
-**IMPORTANTE**: `node_modules` no está instalado en este entorno, por lo que NO se ejecutó `npm run lint`, `npm run build` ni `npm run dev` después de estos cambios. Se explicó al usuario cómo correr el servidor local (`npm install` y luego `npm run dev`, abrir `http://localhost:5173/`), pero el usuario aún no lo ha hecho.
+**IMPORTANTE**: `node_modules` ya está instalado en el entorno, pero NO se ejecutó `npm run lint`, `npm run build` ni `npm run dev` después de los cambios del CV. Esa validación sigue pendiente y ahora es posible correrla directamente (sin `npm install`).
 
 Próxima sesión debe:
 
-1. Correr `npm install && npm run dev` y revisar visualmente las secciones Experiencia, Educación, Stack y Perfil.
+1. Correr `npm run dev` y revisar visualmente las secciones Experiencia, Educación, Stack y Perfil.
 2. Verificar con el usuario si el listado de experiencia (7 items) y educación (7 items) es demasiado largo para el diseño, y recortar si es necesario.
 3. Confirmar si `secondaryRoles` en `src/data/profile.ts` (`'Software Engineer', 'Networking', 'UX/UI Designer'`) sigue siendo adecuado.
 4. Correr `npm run lint` y `npm run build` para confirmar que no hay errores de tipos (especialmente el nuevo grupo "Game / 3D" en `skills.ts` y el ícono `php` en `technologies.ts`).
@@ -40,9 +40,9 @@ Próxima sesión debe:
 ## Estado al cerrar la sesión
 
 - La rama local es `main`.
-- Último commit local y remoto: `f0ccc05 Fix: Open CV in another page.`
-- Hay cambios locales sin commit en: `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, `src/data/profile.ts`, `src/data/technologies.ts`, `src/sections/TechnologyMarquee.tsx`, `CHANGELOG.md`, `PROJECT_CONTEXT.md`, `NEXT_SESSION.md`.
-- No se hizo ningún commit ni push en esta sesión (no fue solicitado).
+- Último commit local y remoto: `2791da5 Update: llenado de datos` (incluye los datos del CV y los `.md` de handoff).
+- El working tree está limpio: los cambios del CV ya fueron commiteados y pusheados; `main` está sincronizado con `origin/main`.
+- `node_modules` está instalado, pero `npm run lint`, `npm run build` y `npm run dev` aún no se corrieron sobre el contenido del CV.
 - El servidor local no se ejecutó.
 
 ## Archivos clave
@@ -90,17 +90,16 @@ Próxima sesión debe:
 ```text
 Retomemos el portafolio en C:\Users\chuom\Documents\GitHub\Portfolio.
 Lee PROJECT_CONTEXT.md, README.md y NEXT_SESSION.md, y después revisa git status.
-Hay cambios sin commit en src/data (experience, education, skills, profile, technologies)
-y en src/sections/TechnologyMarquee.tsx con info real del CV.
-Corre npm install && npm run dev para revisar visualmente esos cambios con el usuario
-antes de continuar.
+El contenido real del CV (experience, education, skills, profile, technologies, marquee)
+ya está commiteado y pusheado en `2791da5`; el working tree está limpio.
+Falta correr npm run lint, npm run build y npm run dev para validar ese contenido
+y revisarlo visualmente con el usuario antes de seguir con proyectos y links sociales.
 ```
 
 ## Comandos útiles
 
 ```powershell
 cd "C:\Users\chuom\Documents\GitHub\Portfolio"
-npm install
 npm run lint
 npm run build
 npm run dev

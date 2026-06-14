@@ -160,6 +160,7 @@ Implemented sections:
 - 2026-06-11: Ignored Windows `Zone.Identifier` metadata and retained the real favicon.
 - 2026-06-14: Read `public/cv-jesus-rojas.pdf` and filled `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` with the real work history, certifications, courses, and bio.
 - 2026-06-14: Added a "Game / 3D" skill group (Unity, 3D modeling, animation, texturing) and added PHP to `src/data/technologies.ts` and `src/sections/TechnologyMarquee.tsx`.
+- 2026-06-14: Committed and pushed the CV content and handoff docs as `2791da5` ("Update: llenado de datos"); `main` is in sync with `origin/main`. Lint/build/dev on the CV content remain to be run.
 
 ## Current Stage
 
@@ -171,12 +172,12 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - `npm run build` passed on 2026-06-10.
 - `npm audit --omit=dev` reported zero known production vulnerabilities.
 - GitHub Pages production assets build correctly for `/Portfolio/`.
-- Local `main` and `origin/main` point to `f0ccc05` (`Fix: Open CV in another page.`).
+- Local `main` and `origin/main` point to `2791da5` (`Update: llenado de datos`); the working tree is clean.
 - `public/cv-jesus-rojas.pdf` is tracked and connected to the Hero download button.
 - Windows `Zone.Identifier` metadata is ignored; the previously tracked encoded variant is marked deleted locally.
-- `npm run lint`, the default build, and the `/Portfolio/` production build passed on 2026-06-11.
+- `npm run lint`, the default build, and the `/Portfolio/` production build passed on 2026-06-11 (before the CV content was added).
 - GitHub Pages returned `404` during the last external check and still needs activation or deployment verification.
-- 2026-06-14: `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` were updated with real content from the CV. Changes are **uncommitted**. `node_modules` is not installed in this environment, so lint/build/dev were not run after the change — verify with `npm install && npm run dev` next session before committing.
+- 2026-06-14: The real CV content in `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` is now **committed and pushed** as `2791da5`. `node_modules` is installed, but `npm run lint`, `npm run build`, and `npm run dev` have **not yet been run against the CV content** — run them next session to validate types and review visually.
 
 ## Completed Tasks
 
@@ -199,7 +200,7 @@ Content personalization and pre-publication QA. The visual structure and deploym
 
 ## Pending Tasks
 
-- Run `npm install && npm run dev` to review the new experience/education/skills/profile content visually in the browser.
+- Run `npm run lint`, `npm run build`, and `npm run dev` to validate types and review the new experience/education/skills/profile content visually in the browser.
 - Replace generic GitHub and LinkedIn social links in `src/data/profile.ts`.
 - Replace placeholder projects in `src/data/projects.ts`.
 - Decide whether to trim the experience list (7 entries) or the education list (7 entries) for layout/length.
