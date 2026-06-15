@@ -12,8 +12,8 @@ export const profile: Profile = {
   summary:
     'Ingeniero en Informática y desarrollador web con amplia experiencia en diseño, desarrollo y soporte técnico de sitios y aplicaciones.',
   bio: [
-    'Desde 2009 desarrollo y mantengo sitios web y soluciones a medida como freelancer, combinando frontend, backend con PHP/MySQL y soporte técnico de sistemas informáticos para distintas empresas.',
-    'Mi formación cruza ingeniería en informática, diseño gráfico (Illustrator, Photoshop) y desarrollo 3D con Unity, lo que me permite abordar un proyecto desde la lógica del software hasta el detalle visual y la experiencia final.',
+    'Desde 2009, desarrollo y mantengo sitios web y soluciones digitales a medida. He combinado desarrollo frontend y backend, además de soporte técnico y administración de sistemas informáticos para diversas empresas.',
+    'Mi formación cruza ingeniería en informática, diseño gráfico y desarrollo 3D, lo que me permite abordar un proyecto desde la lógica del software hasta el detalle visual y la experiencia final.',
   ],
   socials: [
     { label: 'GitHub', href: 'https://github.com/Chuocloudstriker/' },

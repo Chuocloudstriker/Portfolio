@@ -8,7 +8,7 @@ export function About() {
       <Container className="grid gap-10 lg:grid-cols-[0.7fr_1fr]">
         <SectionHeader
           eyebrow="Perfil"
-          title="Un perfil híbrido para construir desde la lógica hasta el detalle visual."
+          title="Un perfil Multidisciplinario para construir desde la Planificación hasta el producto final."
         />
         <div className="grid gap-6">
           {profile.bio.map((paragraph) => (
