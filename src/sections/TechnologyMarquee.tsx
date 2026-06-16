@@ -36,16 +36,25 @@ const icons: Record<TechnologyIcon, IconType> = {
   vite: SiVite,
 };
 
-function TechnologyList() {
+type TechnologyListProps = {
+  isDuplicate?: boolean;
+};
+
+function TechnologyList({ isDuplicate = false }: TechnologyListProps) {
   return (
     <div className="flex shrink-0 items-center gap-5 pr-5 sm:gap-8 sm:pr-8">
       {technologies.map((technology) => {
         const Icon = icons[technology.icon];
 
         return (
-          <div
+          <a
             key={technology.name}
-            className="group flex min-w-max items-center gap-3 rounded-full border border-line bg-panel/70 px-4 py-3 text-muted transition hover:border-accent/60 hover:text-accent"
+            href={technology.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={isDuplicate ? -1 : undefined}
+            aria-label={`Abrir sitio de ${technology.name}`}
+            className="group flex min-w-max items-center gap-3 rounded-full border border-line bg-panel/70 px-4 py-3 text-muted transition hover:border-accent/60 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             <Icon
               className="text-2xl text-accent/75 transition group-hover:text-accent"
@@ -54,7 +63,7 @@ function TechnologyList() {
             <span className="font-mono text-xs font-semibold uppercase tracking-wider">
               {technology.name}
             </span>
-          </div>
+          </a>
         );
       })}
     </div>
@@ -70,7 +79,7 @@ export function TechnologyMarquee() {
       <div className="technology-marquee-track flex w-max">
         <TechnologyList />
         <div aria-hidden="true">
-          <TechnologyList />
+          <TechnologyList isDuplicate />
         </div>
       </div>
     </section>
