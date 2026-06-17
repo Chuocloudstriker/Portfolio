@@ -23,6 +23,12 @@ export type SiteMeta = {
   navigation: Array<{ label: string; href: string }>;
 };
 
+export type SectionCopy = {
+  eyebrow: string;
+  title: string;
+  description?: string;
+};
+
 export type SkillGroup = {
   title: string;
   items: string[];

@@ -1,15 +1,13 @@
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
+import { sectionContent } from '../data/sections';
 import { processSteps } from '../data/site';
 
 export function Process() {
   return (
     <section className="py-20">
       <Container>
-        <SectionHeader
-          eyebrow="Proceso"
-          title="Del diagnóstico al despliegue con documentación suficiente para evolucionar."
-        />
+        <SectionHeader {...sectionContent.process} />
         <div className="grid gap-4 md:grid-cols-4">
           {processSteps.map((step, index) => (
             <article key={step.title} className="rounded-lg border border-line bg-panel p-5">

@@ -2,15 +2,13 @@ import { Chip } from '../components/Chip';
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
 import { education } from '../data/education';
+import { sectionContent } from '../data/sections';
 
 export function Education() {
   return (
     <section id="educacion" className="border-b border-line py-20">
       <Container>
-        <SectionHeader
-          eyebrow="Educación"
-          title="Formación académica, cursos y certificaciones que respaldan mi desarrollo profesional."
-        />
+        <SectionHeader {...sectionContent.education} />
         <div className="space-y-5">
           {education.map((item) => (
             <article

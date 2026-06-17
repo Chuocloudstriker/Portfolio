@@ -3,16 +3,14 @@ import { Button } from '../components/Button';
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
 import { profile } from '../data/profile';
+import { sectionContent } from '../data/sections';
 import { getExternalLinkProps } from '../lib/utils';
 
 export function Contact() {
   return (
     <section id="contacto" className="border-t border-line bg-soft/40 py-20">
       <Container className="grid gap-8 lg:grid-cols-[0.8fr_1fr] lg:items-end">
-        <SectionHeader
-          eyebrow="Contacto"
-          title="Si necesitas construir una interfaz, un sistema web o una identidad digital con base técnica sólida, podemos conversar."
-        />
+        <SectionHeader {...sectionContent.contact} />
         <div className="rounded-lg border border-line bg-panel p-6">
           <p className="leading-7 text-muted">
             Contacto inicial por email para mantener el sitio estático, rápido y compatible con GitHub

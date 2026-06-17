@@ -1,5 +1,6 @@
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
+import { sectionContent } from '../data/sections';
 
 const work = [
   'Identidad visual y sistemas de marca',
@@ -12,11 +13,7 @@ export function CreativeWork() {
   return (
     <section className="border-y border-line bg-soft/40 py-20">
       <Container>
-        <SectionHeader
-          eyebrow="Diseño"
-          title="Criterio visual aplicado a productos que deben entenderse rápido."
-          description="El diseño no aparece como decoración; ordena información, baja fricción y hace que la solución se sienta confiable."
-        />
+        <SectionHeader {...sectionContent.creativeWork} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {work.map((item, index) => (
             <article key={item} className="rounded-lg border border-line bg-panel p-5">

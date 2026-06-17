@@ -1,15 +1,13 @@
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
 import { profile } from '../data/profile';
+import { sectionContent } from '../data/sections';
 
 export function About() {
   return (
     <section id="perfil" className="py-20">
       <Container className="grid gap-10 lg:grid-cols-[0.7fr_1fr]">
-        <SectionHeader
-          eyebrow="Perfil"
-          title="Un perfil Multidisciplinario para construir desde la Planificación hasta el producto final."
-        />
+        <SectionHeader {...sectionContent.about} />
         <div className="grid gap-6">
           {profile.bio.map((paragraph) => (
             <p key={paragraph} className="text-lg leading-8 text-muted">

@@ -3,6 +3,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
 import { projects } from '../data/projects';
+import { sectionContent } from '../data/sections';
 import type { ProjectType } from '../types/content';
 import { cn } from '../lib/utils';
 
@@ -21,11 +22,7 @@ export function Projects() {
   return (
     <section id="proyectos" className="border-y border-line bg-soft/40 py-20">
       <Container>
-        <SectionHeader
-          eyebrow="Proyectos"
-          title="Casos que conectan estructura técnica, experiencia de usuario y dirección visual."
-          description="El contenido actual es placeholder profesional. Cada tarjeta está preparada para rol, stack, repositorio, demo e indicadores reales."
-        />
+        <SectionHeader {...sectionContent.projects} />
         <div className="mb-8 flex flex-wrap gap-2" aria-label="Filtros de proyectos">
           {filters.map((filter) => (
             <button

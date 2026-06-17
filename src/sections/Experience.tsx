@@ -2,15 +2,13 @@ import { Chip } from '../components/Chip';
 import { Container } from '../components/Container';
 import { SectionHeader } from '../components/SectionHeader';
 import { experience } from '../data/experience';
+import { sectionContent } from '../data/sections';
 
 export function Experience() {
   return (
     <section id="experiencia" className="py-20">
       <Container>
-        <SectionHeader
-          eyebrow="Experiencia"
-          title="Trabajo organizado por responsabilidad, impacto y herramientas."
-        />
+        <SectionHeader {...sectionContent.experience} />
         <div className="space-y-5">
           {experience.map((item) => (
             <article
