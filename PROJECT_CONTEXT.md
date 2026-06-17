@@ -26,8 +26,10 @@ Dark warm editorial interface inspired by technical documentation, classic termi
 
 Palette:
 
-- Background: `#1B1410`
+- Background: `#160F0D`
+- Console: `#140F0C`
 - Panel: `#241B16`
+- Soft alternate: `#2D241D` at 40% opacity where used as `bg-soft/40`
 - Primary text: `#F3E7D3`
 - Secondary text: `#BFA98A`
 - Accent: `#D8A657`, `#C9823A`, `#8FAE7E`
@@ -97,14 +99,14 @@ Potential future additions:
 The profile contains the real name, email, bio, experience, education, and skills, sourced from `public/cv-jesus-rojas.pdf`. Pending real user input:
 
 - Projects (still placeholder)
-- Social links (GitHub and LinkedIn URLs are placeholders)
-- Final copy review of the new experience/education/skills content (verify with the user before publishing)
+- Final copy review of the remaining sections (verify with the user before publishing)
 
 ## Data Model
 
 Initial data groups:
 
 - Profile
+- Section header copy
 - Site metadata
 - Skills
 - Technologies
@@ -161,10 +163,16 @@ Implemented sections:
 - 2026-06-14: Read `public/cv-jesus-rojas.pdf` and filled `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` with the real work history, certifications, courses, and bio.
 - 2026-06-14: Added a "Game / 3D" skill group (Unity, 3D modeling, animation, texturing) and added PHP to `src/data/technologies.ts` and `src/sections/TechnologyMarquee.tsx`.
 - 2026-06-14: Committed and pushed the CV content and handoff docs as `2791da5` ("Update: llenado de datos"); `main` is in sync with `origin/main`. Lint/build/dev on the CV content remain to be run.
+- 2026-06-17: Centralized section header copy in `src/data/sections.ts` and added `SectionCopy`.
+- 2026-06-17: Refined Profile copy, roles, summary, and bio for a more direct professional presentation.
+- 2026-06-17: Added compact contextual copy above the technology marquee while preserving the continuous loop behavior.
+- 2026-06-17: Updated Stack groups to `Frontend`, `Backend`, `Diseño / Gamedev`, `DevOps / Entrega`, and `IA aplicada`; added Godot and AI-assisted development practices.
+- 2026-06-17: Tested visual background direction, ending with `ink` at `#160f0d`, `console` at `#140f0c`, `soft` restored to `#2d241d`, and inverted alternating section backgrounds except Hero and TechnologyMarquee.
+- 2026-06-17: Agreed not to run `npm run lint`, `npm run build`, or `npm run dev` for fast visual-only iterations unless explicitly requested or technically necessary.
 
 ## Current Stage
 
-Content personalization and pre-publication QA. The visual structure and deployment configuration are implemented, but real portfolio content and final publication checks remain.
+Content personalization and pre-publication QA. The visual structure and deployment configuration are implemented; remaining work is focused on section-by-section content review, placeholder projects, and final publication checks.
 
 ## Latest Session Status
 
@@ -172,12 +180,12 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - `npm run build` passed on 2026-06-10.
 - `npm audit --omit=dev` reported zero known production vulnerabilities.
 - GitHub Pages production assets build correctly for `/Portfolio/`.
-- Local `main` and `origin/main` point to `2791da5` (`Update: llenado de datos`); the working tree is clean.
+- Local `main` and `origin/main` previously pointed to `2791da5` (`Update: llenado de datos`); check `git status` because the user is now managing add/commit flow from SourceTree.
 - `public/cv-jesus-rojas.pdf` is tracked and connected to the Hero download button.
 - Windows `Zone.Identifier` metadata is ignored; the previously tracked encoded variant is marked deleted locally.
 - `npm run lint`, the default build, and the `/Portfolio/` production build passed on 2026-06-11 (before the CV content was added).
 - GitHub Pages returned `404` during the last external check and still needs activation or deployment verification.
-- 2026-06-14: The real CV content in `src/data/experience.ts`, `src/data/education.ts`, `src/data/skills.ts`, and `src/data/profile.ts` is now **committed and pushed** as `2791da5`. `node_modules` is installed, but `npm run lint`, `npm run build`, and `npm run dev` have **not yet been run against the CV content** — run them next session to validate types and review visually.
+- 2026-06-17: Profile, TechnologyMarquee, Stack, and background rhythm were refined. Some validation passed earlier in the session, but the latest color/background-only edits were intentionally not validated with lint/build/dev because the user is reviewing through an already running localhost.
 
 ## Completed Tasks
 
@@ -197,14 +205,16 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - Hero CV download linked and verified for local and GitHub Pages base paths.
 - Windows download metadata excluded without affecting `public/favicon.svg`.
 - Real experience, education, skills, and profile bio populated from `public/cv-jesus-rojas.pdf`.
+- Section header copy centralized in `src/data/sections.ts`.
+- Profile copy refined for clarity and consistency.
+- Technology marquee given compact contextual copy.
+- Stack updated to include `Diseño / Gamedev`, `DevOps / Entrega`, and `IA aplicada`.
+- Background tokens and alternating section rhythm adjusted for visual testing.
 
 ## Pending Tasks
 
-- Run `npm run lint`, `npm run build`, and `npm run dev` to validate types and review the new experience/education/skills/profile content visually in the browser.
-- Replace generic GitHub and LinkedIn social links in `src/data/profile.ts`.
 - Replace placeholder projects in `src/data/projects.ts`.
 - Decide whether to trim the experience list (7 entries) or the education list (7 entries) for layout/length.
-- Confirm `secondaryRoles` in `src/data/profile.ts` (currently "Software Engineer", "Networking", "UX/UI Designer") still match the new content.
 - Add a persistent pause control for the moving technology marquee.
 - Improve Open Graph metadata with an absolute PNG/JPG image and image details.
 - Decide whether to consolidate repeated Experience and Education card markup.
@@ -215,12 +225,12 @@ Content personalization and pre-publication QA. The visual structure and deploym
 
 ## Next Steps
 
-1. Run the local dev server and review the new CV-based content with the user (experience, education, skills, profile).
-2. Adjust/trim content based on user feedback, then commit.
-3. Replace placeholder projects and social links in `src/data`.
-4. Push `main`, activate GitHub Pages with GitHub Actions, and validate the public URL.
-5. Address the remaining technical review findings.
-6. Run final QA across mobile and desktop.
+1. Continue section-by-section visual and content review, starting from Educación unless the user directs otherwise.
+2. Review whether the inverted background rhythm and the 5-column Stack layout should stay.
+3. Replace placeholder projects in `src/data/projects.ts`.
+4. Commit/push from SourceTree when the user decides.
+5. Activate GitHub Pages with GitHub Actions if still pending, and validate the public URL.
+6. Run final QA across mobile and desktop when the user asks for technical validation.
 
 ## Notes for AI Assistants
 
@@ -231,3 +241,4 @@ Content personalization and pre-publication QA. The visual structure and deploym
 - Do not edit `dist/`; it is generated by Vite and ignored by Git.
 - Update this file after every meaningful project stage.
 - Do not introduce backend complexity unless explicitly required.
+- For visual-only iteration in this project, do not run `npm run lint`, `npm run build`, or `npm run dev` unless the user explicitly asks or the change is functional/risky.

@@ -11,7 +11,7 @@ const work = [
 
 export function CreativeWork() {
   return (
-    <section className="border-y border-line bg-soft/40 py-20">
+    <section className="border-y border-line py-20">
       <Container>
         <SectionHeader {...sectionContent.creativeWork} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

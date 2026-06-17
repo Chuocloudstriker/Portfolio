@@ -5,10 +5,10 @@ import { skillGroups } from '../data/skills';
 
 export function TechStack() {
   return (
-    <section id="stack" className="border-y border-line bg-soft/40 py-20">
+    <section id="stack" className="border-y border-line py-20">
       <Container>
         <SectionHeader {...sectionContent.techStack} />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {skillGroups.map((group) => (
             <article key={group.title} className="rounded-lg border border-line bg-panel p-5">
               <h3 className="font-mono text-sm font-semibold uppercase text-accent">{group.title}</h3>

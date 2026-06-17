@@ -6,7 +6,7 @@ import { sectionContent } from '../data/sections';
 
 export function Experience() {
   return (
-    <section id="experiencia" className="py-20">
+    <section id="experiencia" className="bg-soft/40 py-20">
       <Container>
         <SectionHeader {...sectionContent.experience} />
         <div className="space-y-5">

@@ -1,10 +1,10 @@
 # Next Session Handoff
 
-Fecha: 2026-06-14
+Fecha: 2026-06-17
 
 ## Estado actual
 
-El portafolio estático se encuentra en `C:\Users\chuom\Documents\GitHub\Portfolio`. La estructura visual y el deploy a GitHub Pages ya estaban implementados; en esta sesión se reemplazó el contenido placeholder de experiencia, educación, habilidades y perfil con la información real extraída de `public/cv-jesus-rojas.pdf`.
+El portafolio estático sigue en `C:\Users\chuom\Documents\GitHub\Portfolio` / `/home/cloudstriker/Projects/Portfolio`. La estructura general, el contenido real del CV y el deploy workflow ya estaban implementados. En la sesión del 2026-06-17 se avanzó en refinamiento editorial y visual de las secciones Perfil, TechnologyMarquee, Stack y fondos alternos.
 
 Stack implementado:
 
@@ -19,91 +19,152 @@ Stack implementado:
 
 ## Cambios implementados en esta sesión
 
-- `src/data/experience.ts`: reemplazado con las 7 experiencias laborales reales del CV (Importadora Andesland, Freelance, Atento/Claro, CR Ajustes, Chiquito's Pastelería, IMPROVE, Wall Street English), cada una con un stack asociado.
-- `src/data/education.ts`: reemplazado con formación académica (U.N.E.G.), certificaciones (PHP/MySQL, C en Linux, Illustrator) y cursos (redes wireless, animación 3D, inglés business).
-- `src/data/skills.ts`: se agregaron HTML/CSS/JS y PHP/MySQL (del CV), Illustrator/Photoshop en Diseño, y un nuevo grupo "Game / 3D" (Unity, Modelaje 3D, Animación, Texturización).
-- `src/data/profile.ts`: `summary` y `bio` actualizados para reflejar el perfil real (freelance desde 2009, soporte técnico, PHP/MySQL, diseño gráfico, Unity).
-- `src/data/technologies.ts` y `src/sections/TechnologyMarquee.tsx`: se agregó PHP (`SiPhp`) al cintillo de tecnologías.
-- `CHANGELOG.md` y `PROJECT_CONTEXT.md` actualizados con estos cambios.
+- Se centralizó el copy editorial de los `SectionHeader` en `src/data/sections.ts`.
+- Se agregó el tipo `SectionCopy` en `src/types/content.ts`.
+- Las secciones con header ahora consumen `sectionContent` en vez de tener `eyebrow`, `title` y `description` hardcodeados.
+- Se refinó el copy de Perfil:
+  - título de sección: "Perfil multidisciplinario para llevar una idea desde la planificación hasta el producto final."
+  - `secondaryRoles`: "Desarrollo full stack", "Soporte técnico y redes", "Diseño UX/UI".
+  - `summary` y `bio` más directos y profesionales.
+- `TechnologyMarquee.tsx` mantiene su loop continuo, pero ahora incluye un bloque contextual compacto:
+  - "Tecnologías utilizadas"
+  - "Lenguajes, frameworks y herramientas que he usado en proyectos web, soporte técnico, diseño y desarrollo 3D."
+- Se mantuvo el comportamiento del cintillo:
+  - lista duplicada
+  - ciclo continuo
+  - pausa en hover
+  - links externos
+  - máscara lateral
+  - reduced motion
+- Se ajustó `src/data/skills.ts`:
+  - se condensó Diseño y Game/3D en `Diseño / Gamedev`.
+  - se agregó `Godot`.
+  - se eliminó `Branding` de Stack.
+  - `Entrega` pasó a `DevOps / Entrega`.
+  - se agregó `IA aplicada` con Spec-Driven Development, Test-Driven Development, Prompt Efficiency y Depuración de código asistida.
+- `TechStack.tsx` pasó a `lg:grid-cols-5` para mostrar las 5 tarjetas en desktop.
+- Se hicieron pruebas visuales de color:
+  - `--color-ink` quedó en `#160f0d`.
+  - `--color-console` quedó en `#140f0c`.
+  - `--color-soft` volvió a su valor original `#2d241d`.
+  - los fondos hardcodeados de `:root` y `body` se sincronizaron con `#160f0d`.
+- Se invirtió el patrón de fondos alternos, manteniendo intactos Hero y TechnologyMarquee:
+  - Perfil, Educación, Experiencia y Proceso usan `bg-soft/40`.
+  - Stack, Proyectos, Diseño y Contacto heredan `bg-ink`.
+  - Hero mantiene su gradiente.
+  - TechnologyMarquee mantiene `bg-console`.
 
-## Validación pendiente
+## Validación realizada
 
-**IMPORTANTE**: `node_modules` ya está instalado en el entorno, pero NO se ejecutó `npm run lint`, `npm run build` ni `npm run dev` después de los cambios del CV. Esa validación sigue pendiente y ahora es posible correrla directamente (sin `npm install`).
+- `npm run lint` y `npm run build` se ejecutaron y pasaron durante la sesión antes de los últimos ajustes visuales de color/fondos.
+- Para los últimos cambios visuales rápidos no se ejecutó `npm run lint`, `npm run build` ni `npm run dev`, por decisión del usuario.
+- El usuario tiene un localhost corriendo en otra consola para revisar cambios visuales en vivo.
 
-Próxima sesión debe:
+## Regla operativa acordada
 
-1. Correr `npm run dev` y revisar visualmente las secciones Experiencia, Educación, Stack y Perfil.
-2. Verificar con el usuario si el listado de experiencia (7 items) y educación (7 items) es demasiado largo para el diseño, y recortar si es necesario.
-3. Confirmar si `secondaryRoles` en `src/data/profile.ts` (`'Software Engineer', 'Networking', 'UX/UI Designer'`) sigue siendo adecuado.
-4. Correr `npm run lint` y `npm run build` para confirmar que no hay errores de tipos (especialmente el nuevo grupo "Game / 3D" en `skills.ts` y el ícono `php` en `technologies.ts`).
+Para este proyecto, durante pruebas visuales iterativas:
+
+- No ejecutar `npm run lint`.
+- No ejecutar `npm run build`.
+- No ejecutar `npm run dev`.
+
+Ejecutarlos solo si el usuario lo pide explícitamente o si el cambio es funcional/riesgoso y requiere validación técnica.
 
 ## Estado al cerrar la sesión
 
-- La rama local es `main`.
-- Último commit local y remoto: `2791da5 Update: llenado de datos` (incluye los datos del CV y los `.md` de handoff).
-- El working tree está limpio: los cambios del CV ya fueron commiteados y pusheados; `main` está sincronizado con `origin/main`.
-- `node_modules` está instalado, pero `npm run lint`, `npm run build` y `npm run dev` aún no se corrieron sobre el contenido del CV.
-- El servidor local no se ejecutó.
+- El usuario hará `add` y commits desde SourceTree.
+- Hay cambios locales pendientes de commit.
+- No hay servidor iniciado por Codex al cierre de esta sesión; el servidor que Codex había levantado fue detenido.
+- El último estado observado con `git status --short --untracked-files=all` mostraba cambios pendientes en:
+  - `src/data/skills.ts`
+  - `src/sections/About.tsx`
+  - `src/sections/Contact.tsx`
+  - `src/sections/CreativeWork.tsx`
+  - `src/sections/Education.tsx`
+  - `src/sections/Experience.tsx`
+  - `src/sections/Process.tsx`
+  - `src/sections/Projects.tsx`
+  - `src/sections/TechStack.tsx`
+  - `src/sections/TechnologyMarquee.tsx`
+  - `src/styles/index.css`
 
 ## Archivos clave
 
-- `PROJECT_CONTEXT.md`: contexto del proyecto, decisiones y roadmap.
-- `README.md`: instalación, desarrollo, build y deploy.
-- `src/data/profile.ts`: nombre, bio, email, redes, disponibilidad (actualizado con CV).
-- `src/data/projects.ts`: proyectos mostrados y filtros (aún placeholder, pendiente).
-- `src/data/experience.ts`: experiencia profesional (actualizado con CV).
-- `src/data/education.ts`: estudios, cursos y certificaciones (actualizado con CV).
-- `src/data/skills.ts`: grupos de habilidades (actualizado con CV).
-- `src/data/technologies.ts`: orden y nombres del cintillo tecnológico (PHP agregado).
-- `src/data/site.ts`: navegación y proceso.
-- `src/sections/TechnologyMarquee.tsx`: logos y renderizado del cintillo (PHP agregado).
-- `public/cv-jesus-rojas.pdf`: fuente de la información usada para los datos personales.
+- `PROJECT_CONTEXT.md`: contexto general, decisiones y roadmap.
+- `CHANGELOG.md`: cambios acumulados.
+- `src/data/sections.ts`: copy editorial de headers de sección.
+- `src/data/profile.ts`: datos personales, bio, roles, redes y disponibilidad.
+- `src/data/skills.ts`: tarjetas de Stack.
+- `src/data/technologies.ts`: tecnologías del cintillo.
+- `src/sections/TechnologyMarquee.tsx`: cintillo tecnológico con texto contextual.
+- `src/sections/TechStack.tsx`: grid de Stack.
+- `src/styles/index.css`: tokens de color y estilos globales.
 
 ## Qué quedó pendiente
 
-1. Reemplazar contenido placeholder restante:
-   - GitHub y LinkedIn (`src/data/profile.ts`)
-   - proyectos, repositorios y demos (`src/data/projects.ts`)
+1. Revisar visualmente los últimos cambios de fondos:
+   - Perfil con `bg-soft/40`.
+   - Stack sobre `bg-ink`.
+   - Educación con `bg-soft/40`.
+   - Proyectos sobre `bg-ink`.
+   - Experiencia con `bg-soft/40`.
+   - Diseño sobre `bg-ink`.
+   - Proceso con `bg-soft/40`.
+   - Contacto sobre `bg-ink`.
 
-2. Revisar contenido nuevo del CV con el usuario:
-   - confirmar longitud de experiencia/educación
-   - confirmar roles secundarios y bio
+2. Confirmar si el nuevo `lg:grid-cols-5` en Stack se ve bien en desktop.
 
-3. Revisar hallazgos técnicos previos (sin cambios esta sesión):
-   - botón permanente para pausar el cintillo
-   - Open Graph PNG/JPG con URL absoluta
-   - metadatos SEO duplicados
-   - email duplicado en `profile`
-   - código similar entre Educación y Experiencia
-   - filtros de proyectos sin estado vacío
-   - pruebas básicas de accesibilidad
+3. Continuar con las siguientes secciones:
+   - Educación.
+   - Proyectos placeholder.
+   - Experiencia.
+   - Diseño / CreativeWork.
+   - Proceso.
+   - Contacto.
 
-4. Publicar:
-   - correr `npm install`, `npm run lint`, `npm run build` antes de comitear
-   - revisar y confirmar los cambios locales
-   - commit y push cuando el usuario lo solicite
-   - seleccionar `GitHub Actions` en `Settings > Pages`
-   - validar `https://chuocloudstriker.github.io/Portfolio/`
+4. Reemplazar contenido placeholder restante:
+   - proyectos, repositorios y demos en `src/data/projects.ts`.
+
+5. Revisar hallazgos técnicos previos:
+   - botón permanente para pausar el cintillo.
+   - Open Graph PNG/JPG con URL absoluta.
+   - metadatos SEO duplicados.
+   - email duplicado en `profile`.
+   - código similar entre Educación y Experiencia.
+   - filtros de proyectos sin estado vacío.
+   - pruebas básicas de accesibilidad.
+
+6. Publicación:
+   - confirmar cambios locales.
+   - commit y push desde SourceTree cuando el usuario lo decida.
+   - activar GitHub Pages con GitHub Actions si aún no está activo.
+   - validar `https://chuocloudstriker.github.io/Portfolio/`.
 
 ## Prompt recomendado para retomar
 
 ```text
 Retomemos el portafolio en C:\Users\chuom\Documents\GitHub\Portfolio.
-Lee PROJECT_CONTEXT.md, README.md y NEXT_SESSION.md, y después revisa git status.
-El contenido real del CV (experience, education, skills, profile, technologies, marquee)
-ya está commiteado y pusheado en `2791da5`; el working tree está limpio.
-Falta correr npm run lint, npm run build y npm run dev para validar ese contenido
-y revisarlo visualmente con el usuario antes de seguir con proyectos y links sociales.
+Lee PROJECT_CONTEXT.md, CHANGELOG.md y NEXT_SESSION.md, y después revisa git status.
+No ejecutes npm run lint, npm run build ni npm run dev para pruebas visuales rápidas:
+hay un localhost corriendo en otra consola del usuario.
+La última sesión refinó Perfil, TechnologyMarquee, Stack y fondos alternos.
+Hay cambios pendientes de commit que el usuario gestionará desde SourceTree.
+Continuar revisando visualmente desde la sección Educación o desde el punto que indique el usuario.
 ```
 
 ## Comandos útiles
 
 ```powershell
 cd "C:\Users\chuom\Documents\GitHub\Portfolio"
+git status
+```
+
+Ejecutar estos solo cuando el usuario lo pida o cuando sea necesario por cambios funcionales:
+
+```powershell
 npm run lint
 npm run build
 npm run dev
-git status
 ```
 
 ## Nota importante
@@ -112,5 +173,5 @@ El chat no es la fuente de verdad. La fuente de verdad para continuar debe ser e
 
 - `PROJECT_CONTEXT.md` para contexto general.
 - `NEXT_SESSION.md` para el punto exacto de continuidad.
+- `CHANGELOG.md` para cambios acumulados.
 - `git status` para saber qué archivos cambiaron.
-- Los commits locales y remotos para saber qué falta publicar.

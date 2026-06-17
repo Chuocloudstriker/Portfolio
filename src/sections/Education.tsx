@@ -6,7 +6,7 @@ import { sectionContent } from '../data/sections';
 
 export function Education() {
   return (
-    <section id="educacion" className="border-b border-line py-20">
+    <section id="educacion" className="border-b border-line bg-soft/40 py-20">
       <Container>
         <SectionHeader {...sectionContent.education} />
         <div className="space-y-5">

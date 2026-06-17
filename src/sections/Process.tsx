@@ -5,7 +5,7 @@ import { processSteps } from '../data/site';
 
 export function Process() {
   return (
-    <section className="py-20">
+    <section className="bg-soft/40 py-20">
       <Container>
         <SectionHeader {...sectionContent.process} />
         <div className="grid gap-4 md:grid-cols-4">

@@ -16,6 +16,7 @@ import {
   SiVite,
 } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
+import { Container } from '../components/Container';
 import { technologies, type TechnologyIcon } from '../data/technologies';
 
 const icons: Record<TechnologyIcon, IconType> = {
@@ -73,13 +74,22 @@ function TechnologyList({ isDuplicate = false }: TechnologyListProps) {
 export function TechnologyMarquee() {
   return (
     <section
-      className="technology-marquee border-y border-line bg-console py-5"
+      className="border-y border-line bg-console py-6"
       aria-label="Lenguajes y tecnologías"
     >
-      <div className="technology-marquee-track flex w-max">
-        <TechnologyList />
-        <div aria-hidden="true">
-          <TechnologyList isDuplicate />
+      <Container className="mb-5">
+        <p className="font-mono text-xs uppercase text-accent">Tecnologías utilizadas</p>
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">
+          Lenguajes, frameworks y herramientas que he usado en proyectos web, soporte técnico,
+          diseño y desarrollo 3D.
+        </p>
+      </Container>
+      <div className="technology-marquee overflow-hidden">
+        <div className="technology-marquee-track flex w-max">
+          <TechnologyList />
+          <div aria-hidden="true">
+            <TechnologyList isDuplicate />
+          </div>
         </div>
       </div>
     </section>

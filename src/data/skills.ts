@@ -10,15 +10,20 @@ export const skillGroups: SkillGroup[] = [
     items: ['PHP', 'MySQL', 'Node.js', 'APIs REST', 'Bases de datos'],
   },
   {
-    title: 'Diseño',
-    items: ['Adobe Illustrator', 'Adobe Photoshop', 'UX/UI', 'Branding', 'Sistemas visuales'],
+    title: 'Diseño / Gamedev',
+    items: ['Adobe Illustrator', 'Adobe Photoshop', 'UX/UI', 'Unity', 'Godot', 'Modelaje 3D', 'Animación'],
   },
   {
-    title: 'Game / 3D',
-    items: ['Unity', 'Modelaje 3D', 'Animación', 'Texturización'],
-  },
-  {
-    title: 'Entrega',
+    title: 'DevOps / Entrega',
     items: ['Git', 'GitHub Actions', 'Testing', 'Documentación', 'Deploy estático'],
+  },
+  {
+    title: 'IA aplicada',
+    items: [
+      'Spec-Driven Development',
+      'Test-Driven Development',
+      'Prompt Efficiency',
+      'Depuración de código asistida',
+    ],
   },
 ];
